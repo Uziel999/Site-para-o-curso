@@ -1,11 +1,7 @@
 html {
     padding: 3%;
-
+    
 }
-#logo{
-    width: 70px;
-}
-
 header a {
     text-decoration: none;
     color: black;
@@ -14,11 +10,15 @@ header a {
 a:hover {
     color: black;
 }
-.titulo h2{
-    padding: 10%;
-    text-align: center;
-}
 
+.titulo {
+    text-align: center;
+    font-size: 40px;
+}
+.card-body img{
+    width: 400px;
+    
+}
 footer {
     text-align: center;
     background-color: #198754;
