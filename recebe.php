@@ -5,37 +5,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>recebendo Dados do php</title>
 </head>
 
-<body>
+<body onload="verificacao()">
     <h1>Dados recebidos</h1>
+    <a href="/SiteCurso/index.php" class="btn btn-primary">pagina inicial</a>
 
     <?php
     $nome = $_POST['name'];
     $email = $_POST['email'];
     $msg = $_POST['duvida'];
 
-    echo "<p><b>Nome:</b>".$nome."</p>";
-    echo "<p><b>E-mail:</b>".$email."</p>";
-    echo "<p><b>Duvida:</b>".$msg."</p>";
-    $contato = array ("Nome:"=>$nome, "E-mail:"=>$email,"Mensagem"=>$msg);
+    $contato = array(
+        "Nome:" => $nome,
+        "E-mail:" => $email,
+        "Mensagem" => $msg
+    );
 
-    if(file_exists("dados.json")){
-        $string = file_get_contents("dados.json");
-        $json =json_decode($string,true);
-    }
-    $json ["contatos"][] = $contato;
+    $arquivo = 'dados.json';
+    $json = json_encode($contato);
+    $file = fopen('dados.json', "w");
+    fwrite($file, $json);
+    fclose($file);
+    
+    if (file_exists("dados.json")) {
+      sleep(2);
+       header('location /SiteCurso/red.php');  
+    }    
+    
 
-    $fp = fopen('dados.php','w');
-    if($fp == false){
-        print(error_get_last());
-
-
-        fwrite($fp, json_encode($json));
-        fclose ($fp);
-    }
-
+    
     ?>
 
 </body>
