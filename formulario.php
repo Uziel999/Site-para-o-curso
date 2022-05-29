@@ -26,7 +26,7 @@
     </div>
 
     <section>
-        <form action="recebe.php" method="post">
+        <form action="validacao.php" method="post">
 
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Nome:</label>
