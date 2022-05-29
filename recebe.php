@@ -17,13 +17,14 @@
     $nome = $_POST['name'];
     $email = $_POST['email'];
     $msg = $_POST['duvida'];
+    
+
 
     $contato = array(
         "Nome:" => $nome,
         "E-mail:" => $email,
         "Mensagem" => $msg
     );
-
     $arquivo = 'dados.json';
     $json = json_encode($contato);
     $file = fopen('dados.json', "w");
