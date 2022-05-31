@@ -1,0 +1,44 @@
+* {
+
+    margin: 0;
+
+}
+
+body {
+
+    padding: 10%;
+}
+
+header {}
+
+.titulo h1 {
+    text-align: center;
+
+}
+
+section {
+    margin-top: 30px;
+    border-style: solid 1px;
+}
+
+form input {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    display: grid;
+    text-decoration: none;
+    border:;
+}
+
+form textarea {
+    display: grid;
+}
+
+button {
+    background-color: #0d6efd;
+    border: none;
+    border-radius: 0.25rem;
+    text-align: center;
+    font-weight: 400;
+    text-decoration: none;
+}

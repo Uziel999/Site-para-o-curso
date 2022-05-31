@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Deixe sua duvida</title>
+</head>
+
+<body>
+    <header>
+
+    </header>
+
+    <section>
+        <form>
+            <label>Nome:</label>
+            <input type="text" id="nome" placeholder="Digite aqui..">
+            <label>E-mail:</label>
+            <input type="email" name="" id="email">
+            <button onclick="recebeDados()">Verificar</button>
+        </form>
+        <div id="exibeNaTela"></div>
+    </section>
+
+    <script>
+        function recebeDados() {
+            let nome = document.querySelectorById('#nome');
+            let email = document.querySelectorById('#email');
+
+            if (nome || email == '') {
+                alert('Falta dados');
+
+            }else{
+
+                alert('Tudo ok')
+            }
+
+        }
+    </script>
+</body>
+
+</html>
